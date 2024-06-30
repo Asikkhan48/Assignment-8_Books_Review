@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import BookCard from "../Components/BookCard";
 
 const ListedBooks = () => {
 
@@ -19,9 +20,9 @@ const ListedBooks = () => {
 			<h2 className="text-3xl font-bold">Books</h2>
 		</div>
 
-		<div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+		<div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 p-7 box-border shadow-lg">
 			
-			
+			{books.map(book => <BookCard book={book} key={book.id}></BookCard>)}
 		</div>
 	</div>
 </section>

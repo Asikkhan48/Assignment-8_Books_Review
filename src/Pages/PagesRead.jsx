@@ -1,9 +1,12 @@
+import BarCh from "../Components/BarCh";
+
+
 
 
 const PagesRead = () => {
     return (
-        <div>
-            <h1>Pages to read</h1>
+        <div className="mt-10 text-center bg-base-200 p-10">
+            <BarCh></BarCh>
         </div>
     );
 };

@@ -1,4 +1,9 @@
-[
+
+import React, { PureComponent } from 'react';
+import { BarChart, Bar, XAxis, YAxis, Rectangle, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
+
+const data = [
     {
       "id": "1",
       "bookName": "1984",
@@ -129,5 +134,24 @@
       "publisher": "Dial Press Trade Paperback",
       "yearOfPublishing": 1969
     }
-  ]
+  ];
   
+const BarCh = () => {
+    return (
+        <div>
+            <>
+            <div>
+                <BarChart width={1200} height={350} data={data}>
+                    
+                    <XAxis dataKey="bookName"></XAxis>
+                    <YAxis></YAxis>
+                    <Tooltip></Tooltip>
+                     <Bar dataKey="totalPages" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
+                </BarChart>
+            </div>
+        </>
+        </div>
+    );
+};
+
+export default BarCh;

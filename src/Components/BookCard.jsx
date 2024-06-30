@@ -1,21 +1,36 @@
+import { Link } from "react-router-dom";
+import placeholderImage from "../assets/404.jpg"
 
 
-const BookCard = () => {
+
+const BookCard = ({book}) => {
+
+    const {id, bookName, author, image, review, totalPages, rating, category, tags,publisher, yearOfPublishing} = book;
+
     return (
         <div>
-            <article className="flex flex-col dark:bg-gray-50">
-				<a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
-					<img alt="" className="object-cover w-full h-52 dark:bg-gray-500" src="https://source.unsplash.com/200x200/?fashion?1" />
-				</a>
+            <article className="flex flex-col dark:bg-gray-50 box-border shadow-lg p-5 bg-base-200 rounded-lg space-y-5
+			border-2 hover:scale-105 border-primary hover:border-secondary border-opacity-30">
+
+				<Link to={`/book/${book.id}`} className="">
+					<img className="object-cover w-full h-52 dark:bg-gray-500" src={image || placeholderImage} />
+				
+				<p className="flex flex-col-2">{tags}</p>
 				<div className="flex flex-col flex-1 p-6">
-					<a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
-					<a rel="noopener noreferrer" href="#" className="text-xs tracking-wider uppercase hover:underline dark:text-violet-600">Convenire</a>
-					<h3 className="flex-1 py-2 text-lg font-semibold leading-snug">Te nulla oportere reprimique his dolorum</h3>
+				
+					<div className="mb-5">
+                    <h3 className="flex-1 py-2 text-2xl font-bold leading-snug">{bookName}</h3>
+                    <p> <span className="font-bold">By: </span> {author}</p>
+                    </div>
+
+                    <hr />
+
 					<div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-600">
-						<span>June 1, 2020</span>
-						<span>2.1K views</span>
+						<span>{category}</span>
+						<span>{rating}</span>
 					</div>
 				</div>
+				</Link>
 			</article>
         </div>
     );

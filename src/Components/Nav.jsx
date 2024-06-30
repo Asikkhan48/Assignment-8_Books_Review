@@ -44,6 +44,16 @@ const Nav = () => {
                 Pages to Read
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/bookmark"
+                className={({ isActive }) =>
+                  isActive ? "text-primary font-bold" : "font-bold"
+                }
+              >
+                Bookmark
+              </NavLink>
+            </li>
           </ul>
         </div>
 
